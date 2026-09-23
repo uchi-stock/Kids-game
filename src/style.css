@@ -1,0 +1,68 @@
+:root {
+  color-scheme: dark;
+  background-color: #05060f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: system-ui, -apple-system, sans-serif;
+  color: #f4f4f4;
+}
+
+#stage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+}
+
+canvas {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  touch-action: none;
+}
+
+#hud {
+  text-align: center;
+}
+
+#hud button {
+  margin-top: 8px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: none;
+  background: #50c8ff;
+  color: #05060f;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+#clear-overlay {
+  position: absolute;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+  background: rgba(5, 6, 15, 0.7);
+  border-radius: 12px;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* [hidden]属性による非表示は、上記のdisplay指定より優先させる必要がある。
+   idセレクタとattributeセレクタの詳細度は同一（0,1,0）だが、後勝ちにするため
+   ファイル内で後方に定義する。 */
+#clear-overlay:not([hidden]) {
+  display: flex;
+}
