@@ -14,5 +14,5 @@
 
 ## CI/CD構成
 
-- `reusable-ci.yml`（`packages: '[{"dir":".","build":true,"node_version":"22"}]'`、`enable_standards_check: true`）でlint・test・buildと、dev-standards submoduleへのsymlink整合性チェックを実行し、成功後は自動でsquash mergeされる
+- `reusable-ci.yml`（`packages: '[{"dir":".","build":true,"node_version":"22"}]'`、`enable_standards_check: true`、`enable_dead_link_check: true`）でlint・test・buildと、dev-standards submoduleへのsymlink整合性チェック・ドキュメント間（README.md・CLAUDE.md）のリンク切れチェックを実行し、成功後は自動でsquash mergeされる
 - `reusable-cd.yml`（semantic-releaseによるバージョン管理）は導入していない。デプロイは独立した`deploy.yml`（mainへのpushトリガー）が担う
