@@ -4,9 +4,9 @@
 
 ## 公開URL
 
-https://uchi-stock.github.io/kids-game/
+https://uchi-stock.github.io/Kids-game/
 
-mainブランチへのpushをトリガーに、GitHub Actionsで自動ビルド・デプロイされる（`.github/workflows/deploy.yml`）。
+mainブランチへのpushをトリガーに、GitHub Actionsで自動ビルド・デプロイされる（`.github/workflows/deploy.yml`）。GitHub Pagesの配信URLはリポジトリ名の大文字小文字をそのまま使う。リポジトリ名を変更してもPages側のURLが追従しないことが実機で確認されているため、このURLは実際にリポジトリ設定を確認して更新すること（`vite.config.js`のbaseはCIがビルド時に実際のリポジトリ名から自動設定するため、コード側の追従は不要）。
 
 ## 現状
 

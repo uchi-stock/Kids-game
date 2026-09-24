@@ -28,6 +28,11 @@ jobs:
       - run: npm run lint
       - run: npm run test
       - run: npm run build
+        env:
+          # 実際のリポジトリ名（大文字小文字含む）からbaseを決定する。
+          # vite.config.jsのコメント参照: ハードコードするとリポジトリ名変更に
+          # GitHub Pagesの配信URLが追従しない場合があるため動的に注入する。
+          VITE_BASE: /${{ github.event.repository.name }}/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
