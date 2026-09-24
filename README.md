@@ -2,6 +2,12 @@
 
 スマートフォンを「物理実験装置」に見立て、傾ける・振る・タップするといった操作で物理現象そのものを楽しむゲーム。
 
+## 公開URL
+
+https://uchi-stock.github.io/kids-game/
+
+mainブランチへのpushをトリガーに、GitHub Actionsで自動ビルド・デプロイされる（`.github/workflows/deploy.yml`）。
+
 ## 現状
 
 MVPステージ1「砂シミュレーション」のPOCを実装済み（Issue #1）。
