@@ -13,7 +13,7 @@ export default [
     },
   },
   {
-    files: ['src/__tests__/**/*.js', 'vite.config.js'],
+    files: ['src/__tests__/**/*.js', 'vite.config.js', '**/*.config.cjs', 'textlint-rules/**/*.js'],
     languageOptions: {
       globals: {
         ...globals.node,
@@ -21,6 +21,6 @@ export default [
     },
   },
   {
-    ignores: ['dist/**'],
+    ignores: ['dist/**', 'dev-standards/**'],
   },
 ]

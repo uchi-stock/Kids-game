@@ -12,5 +12,8 @@ export default defineConfig({
   base: process.env.VITE_BASE || '/',
   test: {
     environment: 'jsdom',
+    // dev-standardsはsubmodule（別プロジェクト）のため、自身のテストは
+    // 対象に含めない。
+    exclude: ['**/node_modules/**', 'dev-standards/**'],
   },
 })
