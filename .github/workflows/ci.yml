@@ -21,5 +21,10 @@ jobs:
       # 単一パッケージ（リポジトリルート直下、Vite + Vanilla JS）構成のため、
       # frontend/backend固定ジョブではなくpackagesモードで実行する。
       packages: '[{"dir":".","build":true,"node_version":"22"}]'
+      # dev-standards submoduleへのsymlink（commitlint.config.cjs等）の
+      # 欠落・リンク切れ・.gitignoreの内容乖離をCIで検知する。
+      # 副作用として、他のテストジョブのcheckoutもsubmoduleを取得するように
+      # なる（reusable-ci.yml側の挙動）。
+      enable_standards_check: true
     secrets:
       BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
