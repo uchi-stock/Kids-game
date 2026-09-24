@@ -16,7 +16,7 @@ permissions:
 
 jobs:
   ci:
-    uses: bamiyanapp/dev-standards/.github/workflows/reusable-ci.yml@v2.26.2
+    uses: bamiyanapp/dev-standards/.github/workflows/reusable-ci.yml@v2.27.0
     with:
       # 単一パッケージ（リポジトリルート直下、Vite + Vanilla JS）構成のため、
       # frontend/backend固定ジョブではなくpackagesモードで実行する。
@@ -26,5 +26,9 @@ jobs:
       # 副作用として、他のテストジョブのcheckoutもsubmoduleを取得するように
       # なる（reusable-ci.yml側の挙動）。
       enable_standards_check: true
+      # ドキュメント間の相対リンク（README.md・CLAUDE.md）が実際に存在する
+      # ファイルを指しているかを検証する（bamiyanapp/dev-standards#603）。
+      enable_dead_link_check: true
+      dead_link_check_paths: "README.md\nCLAUDE.md"
     secrets:
       BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
